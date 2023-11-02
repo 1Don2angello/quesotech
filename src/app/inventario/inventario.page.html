@@ -1,10 +1,10 @@
-<ion-header [translucent]="true" class="header">
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="tittle">Inventario</ion-title>
+    <a [routerLink]="['/home']" class="back" slot="start">
+      <ion-icon name="arrow-undo" class="iconb"></ion-icon>
+    </a>
+    <ion-title class="title">Inventario</ion-title>
   </ion-toolbar>
-  <a [routerLink]="['/home']" class="back">
-    <ion-icon name="arrow-undo" class="iconb"></ion-icon>
-  </a>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -15,14 +15,61 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
-    <ion-item *ngFor="let queso of eventList">
+  <ion-list class="lista">
+    <ion-item *ngFor="let queso of eventList" class="listat">
       <ion-label>
         <h3>{{ queso.name }}</h3>
-        <p>Fecha de ingreso: {{ queso.datest| date }}</p>
-        <p>Fecha de salida: {{ queso.dateen| date }}</p>
+        <p>Produccion {{ queso.datep| date: 'dd - MMM - yyyy' : 'es-ES' }}</p>
+        <p>Lote: {{ queso.lote }}</p>
       </ion-label>
+      <ion-label>
+        <ion-button expand="block" (click)="setOpen(queso)">Open</ion-button>
+      </ion-label>
+
+
+      <ion-modal [isOpen]="isModalOpen">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title class="tm">{{ selectedQueso?.name }}</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="closeModal()" class="btnc">Cerrar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-list>
+            <ion-item class="listam">
+              <p>Lote: {{ selectedQueso?.lote }}</p>
+            </ion-item>
+            <ion-item class="listam">
+              <p>Fecha de produccion: {{ selectedQueso?.datep| date: 'dd - MMM - yyyy' : 'es-ES'  }}</p>
+            </ion-item>
+            <ion-item class="listam">
+              <p>Fecha de entrada: {{ selectedQueso?.datest| date: 'dd - MMM - yyyy' : 'es-ES'  }}</p>
+            </ion-item>
+            <ion-item class="listam">
+              <p>Fecha de salida: {{ selectedQueso?.dateen| date: 'dd - MMM - yyyy' : 'es-ES'  }}</p>
+            </ion-item>
+            <ion-item class="listam">
+              <p>Peso: {{ selectedQueso?.peso }}</p>
+            </ion-item>
+            <ion-item class="listam">
+              <p>Estatus: {{ selectedQueso?.status }}</p>
+            </ion-item>
+            <ion-item class="listam">
+              <p>Precio: {{ selectedQueso?.sale }}</p>
+            </ion-item>
+            <ion-item class="listam">
+              <p>Ubicación: {{ selectedQueso?.ubi }}</p>
+            </ion-item>
+          </ion-list>
+        </ng-template>
+      </ion-modal>
+
+
     </ion-item>
   </ion-list>
+  
+  
 
 </ion-content>

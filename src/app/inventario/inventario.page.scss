@@ -1,17 +1,63 @@
 .iconb{
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
+    color: #fffdf1;
 }
 .back{
     background-color: none;
     background: none;
-    margin: 1rem;
+    margin: 10px;
 }
-.tittle{
-    font-weight: 600;
+.title{
+    margin: 0;
     font-size: 1.5rem;
     color: #fffdf1;
+    padding-left: 0;
 }
 .header{
     display: flex;
+    background-color: #002F49;
+}
+
+h3{
+    font-size: 22px;
+}
+.lista{
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.listat{
+    --ion-item-background: #ffcc6c;
+    width: 90%;
+    --padding-end: 16px;
+    margin-top: 20px;
+    border-radius: 7px;
+    --inner-border-width: 0 0 0 0;
+}
+.tm{
+    font-size: 1.5rem;
+    color: #fffdf1;
+}
+.btnc{
+    color: #fffdf1;
+}
+.listam{
+    margin-bottom: 10px;
+    --padding-end: 16px;
+}
+ion-modal {
+    --height: 60%;
+    --border-radius: 10px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+ion-modal::part(backdrop) {
+    background: rgb(0, 0, 0);
+    opacity: 1;
+}
+ion-modal ion-toolbar {
+    --background: #002F49;
+    --color: #fffdf1;
 }
