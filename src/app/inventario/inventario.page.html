@@ -11,7 +11,10 @@
 
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Inventario</ion-title>
+      <a [routerLink]="['/home']" class="back" slot="start">
+        <ion-icon name="arrow-undo" class="iconb"></ion-icon>
+      </a>
+      <ion-title class="title">Inventario</ion-title>
     </ion-toolbar>
   </ion-header>
 
