@@ -24,6 +24,7 @@
     "@ionic/angular": "^7.0.0",
     "@types/html2canvas": "^1.0.0",
     "@types/jspdf": "^2.0.0",
+    "date-fns": "^2.30.0",
     "firebase": "^10.5.2",
     "html2canvas": "^1.4.1",
     "ionicons": "^7.0.0",
@@ -31,6 +32,7 @@
     "jspdf": "^2.5.1",
     "pdf-lib": "^1.17.1",
     "rxjs": "~7.8.0",
+    "serve": "^14.2.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
