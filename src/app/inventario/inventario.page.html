@@ -19,12 +19,10 @@
     <ion-item *ngFor="let queso of eventList" class="listat">
       <ion-label>
         <h3>{{ queso.name }}</h3>
-        <p>Produccion {{ queso.datep| date: 'dd - MMM - yyyy' : 'es-ES' }}</p>
+        <p>Produccion {{ queso.datep| date: 'dd/MM/yy' : 'es-ES' }}</p>
         <p>Lote: {{ queso.lote }}</p>
       </ion-label>
-      <ion-label>
-        <ion-button expand="block" (click)="setOpen(queso)">Open</ion-button>
-      </ion-label>
+      <ion-button slot="end" (click)="setOpen(queso)" class="btnm">Detalles</ion-button>
 
 
       <ion-modal [isOpen]="isModalOpen">
@@ -34,6 +32,7 @@
               <ion-title class="tm">{{ selectedQueso?.name }}</ion-title>
               <ion-buttons slot="end">
                 <ion-button (click)="closeModal()" class="btnc">Cerrar</ion-button>
+                
               </ion-buttons>
             </ion-toolbar>
           </ion-header>
@@ -51,25 +50,24 @@
               <p>Fecha de salida: {{ selectedQueso?.dateen| date: 'dd - MMM - yyyy' : 'es-ES'  }}</p>
             </ion-item>
             <ion-item class="listam">
-              <p>Peso: {{ selectedQueso?.peso }}</p>
+              <p>Peso: {{ selectedQueso?.peso }} KG</p>
             </ion-item>
             <ion-item class="listam">
               <p>Estatus: {{ selectedQueso?.status }}</p>
             </ion-item>
             <ion-item class="listam">
-              <p>Precio: {{ selectedQueso?.sale }}</p>
+              <p>Precio: ${{ selectedQueso?.sale }}</p>
             </ion-item>
             <ion-item class="listam">
               <p>Ubicación: {{ selectedQueso?.ubi }}</p>
             </ion-item>
+            <ion-button (click)="generateBarcode(queso)" class="btnm listm">Generar codigo de barras</ion-button>
           </ion-list>
         </ng-template>
       </ion-modal>
-
-
     </ion-item>
   </ion-list>
   
   
-
+  <script src="/quesotech/src/assets/js/jsBarcode.js"></script>
 </ion-content>

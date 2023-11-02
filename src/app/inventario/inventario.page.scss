@@ -28,6 +28,13 @@ h3{
     flex-direction: column;
     align-items: center;
 }
+.listm{
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
 .listat{
     --ion-item-background: #ffcc6c;
     width: 90%;
@@ -48,7 +55,7 @@ h3{
     --padding-end: 16px;
 }
 ion-modal {
-    --height: 60%;
+    --height: fit-content;
     --border-radius: 10px;
     --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
@@ -60,4 +67,9 @@ ion-modal::part(backdrop) {
 ion-modal ion-toolbar {
     --background: #002F49;
     --color: #fffdf1;
+}
+.btnm{
+    --background: #ffa94d;
+    color: #002F49;
+    font-size: .85rem;
 }
