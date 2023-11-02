@@ -36,7 +36,7 @@
               </ion-buttons>
             </ion-toolbar>
           </ion-header>
-          <ion-list>
+          <ion-list class="listm">
             <ion-item class="listam">
               <p>Lote: {{ selectedQueso?.lote }}</p>
             </ion-item>
@@ -61,13 +61,10 @@
             <ion-item class="listam">
               <p>Ubicación: {{ selectedQueso?.ubi }}</p>
             </ion-item>
-            <ion-button (click)="generateBarcode(queso)" class="btnm listm">Generar codigo de barras</ion-button>
+            <ion-button (click)="generateBarcode(queso)" class="btnm qr">Generar codigo de barras</ion-button>
           </ion-list>
         </ng-template>
       </ion-modal>
     </ion-item>
   </ion-list>
-  
-  
-  <script src="/quesotech/src/assets/js/jsBarcode.js"></script>
 </ion-content>
